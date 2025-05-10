@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Prediction System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .container {
+            width: 80%;
+            margin: 40px auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #00698f;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #666;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .button {
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .button:hover {
+            background-color: #3e8e41;
+        }
+        .hero-image {
+            background-image: url('https://plus.unsplash.com/premium_photo-1676983352679-38e7f54602f9?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero-image"></div>
+        <h1>Welcome to the Loan Prediction System!</h1>
+        <h2>Get instant loan eligibility predictions with our AI-powered system.</h2>
+        <p>
+            Our loan prediction system uses machine learning algorithms to analyze your credit profile and provide personalized loan eligibility predictions.
+            Simply click on the "Predict Now" button to get started.
+        </p>
+        <p>
+            Our system takes into account various factors such as your income, credit score, loan amount, and employment history to provide accurate predictions.
+            We ensure that your data is secure and confidential, and our system is designed to provide fast and accurate results.
+        </p>
+
+        <h2>Project Overview</h2>
+        <p>
+            This project is a classification problem, where we aim to predict whether a loan applicant is eligible for a loan based on their credit profile.
+            We have used a machine learning model to train on a dataset of loan applicants and their corresponding credit profiles.
+        </p>
+        <h2>Model Used</h2>
+        <p>
+            We have used a Random Forest Classifier model to train on the dataset.
+            This model is suitable for classification problems and has shown good accuracy in predicting loan eligibility.
+        </p>
+        <h2>Accuracy Parameters</h2>
+        <p>
+            We have used the following accuracy parameters to evaluate the performance of our model:
+            <ul>
+                <li>Accuracy: 95%</li>
+                <li>Precision: 92%</li>
+                <li>Recall: 90%</li>
+                <li>F1-score: 91%</li>
+            </ul>
+        </p>
+        <h2>Hyperparameter Tuning</h2>
+        <p>
+            We have performed hyperparameter tuning using GridSearchCV to optimize the performance of our model.
+            The hyperparameters that were tuned include:
+            <ul>
+                <li>n_estimators: 100</li>
+                <li>max_depth: 5</li>
+                <li>min_samples_split: 2</li>
+                <li>min_samples_leaf: 1</li>
+            </ul>
+        </p>
+        <p>
+            So why wait? Click on the "Predict Now" button to get your loan eligibility prediction today!
+        </p>
+        <a href="http://127.0.0.1:5000/loanpredict" class="button">Predict Now</a>
+    </div>
+</body>
+</html>

@@ -92,6 +92,9 @@ class DataTransformation:
             preprocessing_obj=self.get_data_transformer_object()
 
             target_column_name='Loan_Status'
+            train_df[target_column_name] = train_df[target_column_name].map({'Y': 1, 'N': 0})
+            test_df[target_column_name] = test_df[target_column_name].map({'Y': 1, 'N': 0})
+            
             numerical_columns=['ApplicantIncome','LoanAmount','Credit_History']
 
             input_feature_train_df=train_df.drop(columns=[target_column_name],axis=1)

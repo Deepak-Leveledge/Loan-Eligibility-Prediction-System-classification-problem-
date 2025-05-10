@@ -17,7 +17,7 @@ from xgboost import XGBClassifier
 from sklearn.metrics import r2_score
 
 from src.utlis import save_object
-from src.utlis import evaluate_model
+from src.utlis import evaluate_models
 
 
 @dataclass
@@ -25,7 +25,7 @@ class ModelTrainerConfig:
     trained_model_file_path=os.path.join("artifacts","model.pkl")
 
 
-class ModelTariner:
+class ModelTrainer:
 
     def __init__(self):
         self.model_trainer_config=ModelTrainerConfig()
@@ -56,17 +56,15 @@ class ModelTariner:
 
             params={
                 "Random Forest":{
-                    'criterion':['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
+                    'criterion':['gini', 'entropy', 'log_loss'],
                     # 'max_features':['sqrt','log2'],
                     'n_estimators': [8,16,32,64,128,256]
                 },
                 "Decision Tree":{
-                    'criterion':['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
-                    # 'max_features':['sqrt','log2'],
-                    # 'max_depth': [int(x) for x in np.linspace(10, 110, num = 11)],
-                    'min_samples_split': [2, 5, 10],
-                    'min_samples_leaf': [1, 2, 4],
-                    'max_features':['auto','sqrt','log2']
+                      'criterion': ['gini', 'entropy', 'log_loss'],
+                      'min_samples_split': [2, 5, 10],
+                      'min_samples_leaf': [1, 2, 4],
+                      'max_features': ['auto', 'sqrt', 'log2']
                 },
                 "Gradient Boosting":{
                     # 'loss':['squared_error', 'huber', 'absolute_error', 'quantile'],
@@ -93,7 +91,7 @@ class ModelTariner:
 
 
 
-            model_report:dict=evaluate_model(X_train,y_train,X_test,y_test,models,params)
+            model_report:dict=evaluate_models(X_train,y_train,X_test,y_test,models,params)
 
             ## To get the best model score from dict 
             best_model_score=max(sorted(model_report.values()))
