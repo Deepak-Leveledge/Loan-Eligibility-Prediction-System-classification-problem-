@@ -8,5 +8,5 @@ xgboost
 setuptools
 dill
 flask
-
+gunicorn
 # -e .
